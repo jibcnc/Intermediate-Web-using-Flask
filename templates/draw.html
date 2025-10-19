@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>งาน Git ครั้งที่แล้ว</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #4cafef;
+            color: white;
+            padding: 20px 0;
+            margin: 0 0 30px 0;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4cafef;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #007acc;
+        }
+
+        .menu {
+            margin: 40px 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            background-color: #4cafef;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <h2>แบบฟอร์มรับข้อมูล</h2>
+
+    <form action="/run" method="post">
+        <label>Input character:</label><br>
+        <input type="text" name="character" required><br>
+
+        <label>Turn want to run:</label><br>
+        <input type="number" name="turn" required><br>
+
+        <button type="submit">Run</button>
+    </form>
+
+    <div class="menu">
+        <a href="/">หน้าแนะนำสถานที่ท่องเที่ยว</a>
+        <a href="/tech">หน้าเทคโนโลยีที่สนใจ</a>
+        <a href="/myid">หน้ารหัสนักศึกษา</a>
+    </div>
+</body>
+</html>
