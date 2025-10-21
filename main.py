@@ -79,25 +79,23 @@ def run():
     results = [mylib.myfunc(x, i) for i in range(1, y + 1)]
     return render_template('result.html', x=x, y=y, results=results)
 
-# -------- New routes --------
-@app.route('/sum/<xx>/<yy>')
-def sum_xy(xx, yy):
-    """Return sum and handle wrong data types with try/except."""
-    try:
-        a = int(xx)
-        b = int(yy)
-        z = a + b
-        return f"The result of sum between {a} and {b} is {z}"
-    except ValueError:
-        return "You are using miss data type for operation", 400
+
+
+#Assignment 19/10/25
+@app.route('/sum/<xx>/<yy>') 
+def sum_number(xx,yy):
+    try:                           
+        number_xx = int(xx)
+        number_yy = int(yy)
+        result_number = number_xx + number_yy
+        return "The result of sum between " + str(number_xx) + " and " + str(number_yy) + " is " + str(result_number)
+    except(ValueError,TypeError):     
+        return "You are using miss data type for operation"
 
 @app.route('/concat/<xx>/<yy>')
-def concat_xy(xx, yy):
-    """Return simple concatenation (as strings)."""
-    return f"The result of concatenate between {xx} and {yy} is {xx}{yy}"
+def concat(xx, yy):
+    result_concat = xx + yy
+    return "The result of concatenate between " + str(xx) + " and " + str(yy) + " is " + str(result_concat)
 
-# ----------------------------
-
-if __name__ == '__main__':
-    # ใช้พอร์ต 5000 เพื่อหลีกเลี่ยงสิทธิ์ root ที่พอร์ตต่ำกว่า 1024
-    app.run(host='0.0.0.0', port=80, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True, port=80)
